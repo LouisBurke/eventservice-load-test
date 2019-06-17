@@ -1,0 +1,75 @@
+{
+  "sensor": "The Sensor",
+  "sendTime": "2016-10-13T09:46:59.699+0000",
+  "data": [
+    {
+      "@context": "http://purl.imsglobal.org/ctx/caliper/v1p1",
+      "type": "GradeEvent",
+      "id": "urn:uuid:259f6067-f929-4960-a71b-7f9d25e90b16",
+      "actor": {
+        "id": "urn:uuid:c7ed6970-a53a-4ab1-89df-86522167b8bd",
+        "type": "Person",
+        "extensions": {
+          "userAgent": "assessmentEventStartedV11"
+        }
+      },
+      "action": "Graded",
+      "object": {
+        "id": "urn:uuid:4ddb4416-36f1-44b3-88b6-1150d6e40bfd",
+        "type": "Attempt",
+        "name": "GatlingTest-GradeEvent",
+        "description": "GatlingTest GradeEvent description",
+        "assignee": "urn:uuid:c7ed6970-a53a-4ab1-89df-86522167b8bd",
+        "assignable": {
+          "id": "urn:uuid:c050e852-5edb-4743-92d1-b53466de3a5f",
+          "type": "Assessment"
+        },
+        "count": 35,
+        "dateCreated": "2016-11-10T10:05:00.000Z",
+        "startedAtTime": "2016-11-11T10:05:00.000Z",
+        "endedAtTime": "2016-11-12T10:05:00.000Z",
+        "duration": "PT1200S",
+        "extensions": {
+          "runId": "b663ebd6-5efc-4c24-a346-57f06dc2857-DS-430"
+        }
+      },
+      "eventTime": "2016-11-15T10:17:00.000Z",
+      "edApp": "https://www.hmhco.com/ReadingInventory",
+      "referrer": "GatlingGradeEventReferrer",
+      "generated": {
+        "id": "urn:uuid:a82687ef-7e7b-4b8e-8b69-5f4d917f1a33",
+        "type": "Score",
+        "name": "star",
+        "description": "Star score description",
+        "attempt": "urn:uuid:4ddb4416-36f1-44b3-88b6-1150d6e40bfd",
+        "maxScore": 1700.99,
+        "scoreGiven": 80.5,
+        "scoredBy": "https://www.hmhco.com/ReadingInventory",
+        "comment": "The lexile score from Test Quiz taken on date/time for Gatling test student",
+        "dateCreated": "2016-11-10T10:05:01.000Z",
+        "extensions": {
+          "generatedExt1": "gatlingGeneratedExtensionVal"
+        }
+      },
+      "membership": {
+        "id": "urn:uuid:7aa60dbc-5ede-4d87-852f-76e5c08ed8a6",
+        "type": "Membership",
+        "organization": {
+          "id": "urn:uuid:7f050b22-5995-40de-85ed-504f4b05bb2b",
+          "name": "schoolRefId",
+          "subOrganizationOf": {
+            "id": "urn:uuid:bc94e314-44c9-4f27-ad20-0e5af9797367",
+            "name": "districtRefId"
+          }
+        },
+        "roles": [
+          "Administrator"
+        ],
+        "status": "Active"
+      },
+      "extensions": {
+        "runID": "b663ebd6-5efc-4c24-a346-57f06dc2857-DS-430"
+      }
+    }
+  ]
+}
