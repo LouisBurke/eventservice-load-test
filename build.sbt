@@ -10,7 +10,7 @@ lazy val root = (project in file("."))
       version := "0.1.0-SNAPSHOT"
     )),
     name := "eventservice-load-test",
-    // scalaSource in Gatling := baseDirectory.value / "test",
     libraryDependencies ++= gatling,
-    libraryDependencies +=  "org.json4s" %% "json4s-native" % "3.6.6"
+    libraryDependencies += "org.json4s" %% "json4s-native" % "3.6.6",
+    libraryDependencies += "org.apache.httpcomponents" % "httpclient" % "4.5.9"
   )
