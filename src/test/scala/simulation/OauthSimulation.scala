@@ -12,13 +12,11 @@ import org.apache.http.client.methods.HttpPost
 import org.apache.http.entity.StringEntity
 import org.apache.http.impl.client.HttpClientBuilder
 import org.json4s.jackson.JsonMethods._
-import org.json4s.JsonDSL._
 
 import scala.io.Source
 
 class OauthSimulation extends Simulation {
 
-  //val eventServiceUrl = "http://int.hmhone.app.hmhco.com/api/eventservice/v1.1/caliper/events"
   val eventServiceUrl = "http://localhost:8080"
 
   val payload: String = {
@@ -40,7 +38,7 @@ class OauthSimulation extends Simulation {
 
   def getNewTestToken: String = {
     val url = "https://api.dev.eng.hmhco.com/token-service/api/v1/token"
-    val creds = "928b4ad8-31d7-424f-95e1-2eb43c9bb527" + ":" + "test"
+    val creds = "fake" + ":" + "fake"
     val encoding = java.util.Base64.getEncoder.encodeToString(creds.getBytes())
 
     val post = new HttpPost(url)
@@ -50,9 +48,7 @@ class OauthSimulation extends Simulation {
     post.setEntity(new StringEntity("grant_type=client_credentials&scope=eventservice.write"))
 
     val entity = HttpClientBuilder.create().build().execute(post).getEntity
-    val bearer = "Bearer ".concat(compact(render(parse(scala.io.Source.fromInputStream(entity.getContent).mkString) \ "access_token")).replace("\"",""))
-    println(bearer)
-    bearer
+    "Bearer ".concat(compact(render(parse(scala.io.Source.fromInputStream(entity.getContent).mkString) \ "access_token")).replace("\"",""))
   }
 
   def getAndStore(session: Session): Session = {
